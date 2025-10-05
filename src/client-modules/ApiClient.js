@@ -1,5 +1,4 @@
 var request = require('request');
-var url = require('url');
 var httpProxy = require('http-proxy');
 
 var _apiDomain;
@@ -75,9 +74,17 @@ poglyadApiClient.request = function(method, url, params, reqOrigin, callback){
   params = params || {};
   callback = callback || function(){};
 
+
+  var _url = 'http://' + _apiDomain;
+  if (_apiPort) {
+    _url += ':' +  _apiPort;
+  }
+
+  _url += '/' + url;
+
   var options = {
     method: method,
-    url: 'http://' + _apiDomain + '/' + url,
+    url: _url,
     headers: {},
     json: true
   };
