@@ -17,7 +17,7 @@
 
 		"express-session": "^1.16.2",
 		"cookie-parser": "^1.4.4",
-		"sequelize": "5.22.3",
+		"sequelize": "6.37.8",
 		"connect-session-sequelize": "^7.1.5",
 
 		"pg": "^8.8.0",
